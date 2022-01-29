@@ -1,0 +1,107 @@
+.spin {
+  border-radius: 6px;
+  background-color: #1b1a20;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  // 全屏模式
+  &.fullscreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -32px;
+    margin-top: -32px;
+    z-index: 10;
+  }
+  &-inner {
+    margin: auto;
+  }
+}
+
+//   div {
+//     box-sizing: border-box;
+//     display: block;
+//     position: absolute;
+//     width: 51px;
+//     height: 51px;
+//     margin: 6px;
+//     border: 6px solid #fff;
+//     border-radius: 50%;
+//     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+//     border-color: #fff transparent transparent transparent;
+//     &:nth-child(1) {
+//       animation-delay: -0.45s;
+//     }
+//     &:nth-child(2) {
+//       animation-delay: -0.3s;
+//     }
+//     &:nth-child(3) {
+//       animation-delay: -0.15s;
+//     }
+//   }
+
+//   @keyframes lds-ring {
+//     0% {
+//       transform: rotate(0deg);
+//     }
+
+//     100% {
+//       transform: rotate(360deg);
+//     }
+//   }
+// }
+
+// Here is where the magic happens
+
+$offset: 187;
+$duration: 1.4s;
+
+.spinner {
+  // position: fixed;
+  // top: 50%;
+  // left: 50%;
+  // margin-left: -32px;
+  // margin-top: -32px;
+  // width: 64px;
+  // height: 64px;
+  // z-index: 10;
+  // border-radius: 5px;
+  // background-color: #000;
+  animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  stroke: #4285F4;
+  animation:
+    dash $duration ease-in-out infinite;
+    // colors ($duration*4) ease-in-out infinite;
+}
+
+@keyframes colors {
+	0% { stroke: #4285F4; }
+	25% { stroke: #DE3E35; }
+	50% { stroke: #F7C223; }
+	75% { stroke: #1B9A59; }
+  100% { stroke: #4285F4; }
+}
+
+@keyframes dash {
+  0% { stroke-dashoffset: $offset; }
+  50% {
+    stroke-dashoffset: calc($offset/4);
+    transform:rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: $offset;
+    transform:rotate(450deg);
+  }
+}
