@@ -28,12 +28,6 @@ export default function Product () {
             <b>29</b>
             <span>.45</span>
           </div>
-
-          {/* 分期 */}
-          <div className="installment">
-            <span>or 5 x</span>
-            <b>$ 5.89</b>
-          </div>
         </div>
         <CardActions>
           <Button

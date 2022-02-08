@@ -5,7 +5,7 @@ export default function useShadow () {
 
   return {
     elevation,
-    onMouseEnter: () => setElevation(5),
+    onMouseEnter: () => setElevation(3),
     onMouseLeave: () => setElevation(0)
   }
 }

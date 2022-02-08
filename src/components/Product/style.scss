@@ -26,16 +26,21 @@
     }
   }
   &__price {
-    height: 60px;
+    height: 38px;
+    & .val b {
+      font-size: 1.4em;
+      margin-left: 5px;
+    }
   }
   &__stopper {
     position: absolute;
     color: #ececec;
-    top: 16px;
-    right: 16px;
+    top: 20px;
+    right: 22px;
     padding: 5px;
     font-size: .6em;
     background-color: #1b1a20;
     cursor: default;
+    border-radius: 2px;
   }
 }
