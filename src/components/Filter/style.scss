@@ -1,0 +1,13 @@
+.filter {
+  width: 15%;
+  @media (max-width: 1024px) {
+    width: 20%;
+  }
+  @media (max-width: 640px) {
+    width: 25%;
+  }
+  @media (max-width: 460px) {
+    width: 100%;
+    text-align: center;
+  }
+}

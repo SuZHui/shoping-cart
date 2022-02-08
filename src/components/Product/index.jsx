@@ -1,17 +1,48 @@
 import React from 'react'
+import { Card, CardMedia, CardActions, Button } from '@mui/material'
+import useShadow from './useShadow'
+import './style.scss'
 
 export default function Product () {
+  const { elevation, onMouseEnter, onMouseLeave } = useShadow()
+
+
   return (
-    <div className="product-item">
-      <div>产品销售角标（根据条件显示隐藏）</div>
-      <div>产品图片占位</div>
-      <p>产品标题</p>
-      <div>
-        <small>价格单位</small>
-        <b>价格整数位</b>
-        <span>价格小数位</span>
-      </div>
-      <div>加入购物车</div>
+    <div className="product-item"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      <Card
+        elevation={elevation}
+      >
+        <div className="product-item__stopper">免运费</div>
+        <CardMedia
+          component="img"
+          src="/img/products/51498472915966370_1.jpg"
+          alt="1"
+          ></CardMedia>
+        <p className="product-item__title">Cat Tee Black T-Shirt</p>
+        <div className="product-item__price">
+          <div className="val">
+            <small>$</small>
+            <b>29</b>
+            <span>.45</span>
+          </div>
+
+          {/* 分期 */}
+          <div className="installment">
+            <span>or 5 x</span>
+            <b>$ 5.89</b>
+          </div>
+        </div>
+        <CardActions>
+          <Button
+            fullWidth
+            color="error"
+            variant="outlined"
+            sx={{color: '#fb0101', borderColor: '#fb0101'}}>加入购物车</Button>
+        </CardActions>
+      </Card>
     </div>
   )
 }
