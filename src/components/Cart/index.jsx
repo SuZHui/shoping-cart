@@ -6,17 +6,17 @@ import CartItem from './CartItem'
 import Empty from './Empty'
 import './style.scss'
 
-const lockBody = () => {
-  if (!document.body.classList.contains('overflow-hidden')) {
-    document.body.classList.add('overflow-hidden')
-  }
-}
+// const lockBody = () => {
+//   if (!document.body.classList.contains('overflow-hidden')) {
+//     document.body.classList.add('overflow-hidden')
+//   }
+// }
 
-const unlockBody = () => {
-  if (document.body.classList.contains('overflow-hidden')) {
-    document.body.classList.remove('overflow-hidden')
-  }
-}
+// const unlockBody = () => {
+//   if (document.body.classList.contains('overflow-hidden')) {
+//     document.body.classList.remove('overflow-hidden')
+//   }
+// }
 
 
 export default function Cart() {
@@ -25,9 +25,6 @@ export default function Cart() {
   const classes = ['cart']
   if (isOpen) {
     classes.push('open')
-    lockBody()
-  } else {
-    unlockBody()
   }
   return (
     <div className={classes.join(' ')}>
