@@ -21,7 +21,7 @@ export default function Product ({ onAdd, data }) {
         }
         <CardMedia
           component="img"
-          src={`/img/products/${data.sku}_1.jpg`}
+          src={`${process.env.PUBLIC_URL}/img/products/${data.sku}_1.jpg`}
           alt={data.title}
           ></CardMedia>
         <p className="product-item__title">{ data.title }</p>

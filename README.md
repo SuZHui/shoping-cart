@@ -14,7 +14,7 @@
 - 加入eslint提示
 - 加入`husky`和`lint-staged`
 - 检查项目内的组件style,全部替换为css module
-- 使用`gh-pages` 部署分支与开发分支分离
+- ~~使用`gh-pages` 部署分支与开发分支分离~~
 
 ## 功能层面：
 1. 添加购物车
