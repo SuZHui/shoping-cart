@@ -7,18 +7,22 @@ import { useSelector } from 'react-redux';
 import './style.scss';
 
 export default function Scaffold() {
-  const state = useSelector((state) => state.scaffold);
+  const { products, filters, sort, isLoading } = useSelector(
+    (state) => state.scaffold
+  );
+
   useEffect(() => {
     fetchProducts();
-  }, []);
+    console.log('change');
+  }, [filters, sort]);
 
   return (
     <>
-      {false && <Spin fullscreen />}
+      {isLoading && <Spin fullscreen />}
       <div className="scaffold">
         <ScaffoldHeader />
         {/* 产品列表 */}
-        {state.products.map((p) => (
+        {products.map((p) => (
           <Product key={p.id} data={p} />
         ))}
       </div>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { NativeSelect, FormControl } from '@mui/material';
+import { useSelector } from 'react-redux';
+import { updateSort } from '@/services/actions';
 import './style.scss';
 
 const sortBy = [
@@ -9,23 +11,23 @@ const sortBy = [
 ];
 
 export default function Header() {
-  const [sort, setSort] = React.useState(undefined);
+  const state = useSelector((state) => state.scaffold);
 
   const handleChange = (event) => {
-    setSort(event.target.value);
+    updateSort(event.target.value);
   };
 
   return (
     <div className="scaffold-header">
       <div>
-        <small>共5件商品</small>
+        <small>共{state.products.length}件商品</small>
       </div>
       <div>
         <FormControl sx={{ minWidth: 140 }}>
           {/* <InputLabel id="demo-simple-select-label">排序</InputLabel> */}
           <NativeSelect
             id="demo-simple-select"
-            value={sort}
+            value={state.sort}
             label="Age"
             onChange={handleChange}
           >

@@ -46,3 +46,7 @@ export default function Product({ onAdd, data }) {
     </div>
   );
 }
+
+Product.defaultProps = {
+  onAdd() {},
+};
