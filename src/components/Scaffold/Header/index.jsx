@@ -1,20 +1,20 @@
-import React from 'react'
-import { NativeSelect, FormControl } from '@mui/material'
-import './style.scss'
+import React from 'react';
+import { NativeSelect, FormControl } from '@mui/material';
+import './style.scss';
 
 const sortBy = [
   { value: undefined, label: '未排序' },
   { value: 'lowestprice', label: '价格升序' },
-  { value: 'highestprice', label: '价格降序' }
-]
+  { value: 'highestprice', label: '价格降序' },
+];
 
-export default function Header () {
-  const [sort, setSort] = React.useState(undefined)
+export default function Header() {
+  const [sort, setSort] = React.useState(undefined);
 
   const handleChange = (event) => {
     setSort(event.target.value);
-  }
-  
+  };
+
   return (
     <div className="scaffold-header">
       <div>
@@ -29,17 +29,14 @@ export default function Header () {
             label="Age"
             onChange={handleChange}
           >
-            {
-              sortBy.map((o, i) => (
-                <option
-                  value={o.value}
-                  key={i}
-                >{ o.label }</option>
-              ))
-            }
+            {sortBy.map((o, i) => (
+              <option value={o.value} key={i}>
+                {o.label}
+              </option>
+            ))}
           </NativeSelect>
         </FormControl>
       </div>
     </div>
-  )
+  );
 }

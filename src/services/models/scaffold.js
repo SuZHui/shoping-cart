@@ -1,20 +1,18 @@
-import { createModel } from '@rematch/core'
-
+import { createModel } from '@rematch/core';
 
 export const scaffold = createModel()({
   state: {
-    products: []
+    products: [],
   },
   reducers: {
     fetchProducts: (state, payload) => {
       return {
         ...state,
-        products: payload
-      }
-    }
+        products: payload,
+      };
+    },
   },
-  effects: dispatch => {
-    return {
-    }
-  }
-})
+  effects: (dispatch) => {
+    return {};
+  },
+});

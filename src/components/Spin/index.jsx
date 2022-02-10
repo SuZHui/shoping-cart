@@ -1,8 +1,10 @@
-import React from "react";
-import "./style.scss";
+import React from 'react';
+import './style.scss';
 
 export default function Spin({ fullscreen = false }) {
-  const className = ['spin', fullscreen && 'fullscreen'].filter(Boolean).join(' ')
+  const className = ['spin', fullscreen && 'fullscreen']
+    .filter(Boolean)
+    .join(' ');
   return (
     <div className={className}>
       <div className="icon">
@@ -107,5 +109,5 @@ export default function Spin({ fullscreen = false }) {
         </svg>
       </div>
     </div>
-  )
+  );
 }
