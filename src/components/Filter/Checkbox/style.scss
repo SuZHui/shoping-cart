@@ -1,3 +1,6 @@
+$size: 34px;
+$radius: 2px;
+
 .checkbox {
   display: inline-block;
   & > label {
@@ -6,20 +9,20 @@
     cursor: pointer;
     font-size: 22px;
     user-select: none;
-    width: 35px;
-    height: 35px;
+    width: $size;
+    height: $size;
     font-size: .8em;
     margin-bottom: 8px;
     margin-right: 8px;
-    border-radius: 50%;
-    line-height: 35px;
+    border-radius: $radius;
+    line-height: $size;
     text-align: center;
     input[type="checkbox"] {
       position: absolute;
       opacity: 0;
       cursor: pointer;
       &:checked~span {
-        background-color: #1b1a20;
+        background-color: #ff4d4f;
         color: #ececec;
       }
     }
@@ -27,18 +30,19 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 35px;
-      height: 35px;
+      width: $size;
+      height: $size;
       font-size: .8em;
-      border-radius: 50%;
-      line-height: 35px;
+      border-radius: $radius;
+      line-height: $size;
       text-align: center;
-      color: #1b1a20;
+      color: #ff4d4f;
       background-color: #fff;
       border: 1px solid transparent;
       transition: border 0.4s ease, background-color 0.4s ease;
+      font-weight: bold;
       &:hover {
-        border: 1px solid #1b1a20;
+        border: 1px solid #ff4d4f;
       }
     }
   }

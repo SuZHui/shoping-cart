@@ -11,7 +11,7 @@ const store = init({
 store.subscribe(() => {
   const state = store.getState();
   const persist = {
-    cart: state.cart,
+    cart: { ...state.cart, isOpen: false },
   };
   localStorage.setItem('persist', JSON.stringify(persist));
 });
