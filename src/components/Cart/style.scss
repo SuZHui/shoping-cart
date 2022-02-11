@@ -1,4 +1,4 @@
-$cart-width: 440px;
+$cart-width: 420px;
 $bg-color: #1b1a20;
 $theme-color: #fb0101;
 
@@ -18,7 +18,7 @@ $theme-color: #fb0101;
   &.open {
     right: 0;
   }
-  &__open-btn, &__close-btn {
+  &__open-btn, &__close-btn, &__clear-btn {
     position: absolute;
     top: 0;
     cursor: pointer;
@@ -49,6 +49,12 @@ $theme-color: #fb0101;
     width: 40px;
     height: 60px;
     right: 0px;
+    line-height: 60px;
+  }
+  &__clear-btn {
+    width: 40px;
+    height: 60px;
+    left: 0px;
     line-height: 60px;
   }
   .quantity {
@@ -94,7 +100,7 @@ $theme-color: #fb0101;
       color: #fff;
       box-shadow: 0px -2px 20px 0px rgb(0 0 0 / 80%);
       background-color: $bg-color;
-      padding: 10px;
+      padding: 10px 14px 14px;
       text-align: center;
     }
   }

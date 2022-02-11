@@ -1,4 +1,5 @@
 import CheckBox from './Checkbox';
+import { updateFilters } from '@/services/actions';
 
 import './style.scss';
 
@@ -13,8 +14,8 @@ export default function Filter() {
     } else {
       selectedCheckboxes.add(label);
     }
-    // TODO: update redux
-    console.log(selectedCheckboxes);
+    // update store
+    updateFilters([...selectedCheckboxes]);
   };
 
   return (

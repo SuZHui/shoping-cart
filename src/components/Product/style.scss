@@ -8,7 +8,7 @@
   position: relative;
   width: 25%;
   text-align: center;
-  padding: 10px;
+  padding: 6px;
   box-sizing: border-box;
   &__title {
     position: relative;
@@ -42,5 +42,9 @@
     background-color: #1b1a20;
     cursor: default;
     border-radius: 2px;
+  }
+
+  .ant-card-body {
+    padding: 10px;
   }
 }

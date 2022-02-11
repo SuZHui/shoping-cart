@@ -53,12 +53,12 @@ export const scaffold = createModel()({
   },
   effects: (dispatch) => {
     return {
-      fetchProducts: async (_, state) => {
+      fetchProducts: async function (_, state) {
         dispatch({ type: 'scaffold/updateLoadingState', payload: true });
         try {
           const { data } = await API.getProducts();
           let products = data.products;
-          // TODO: 过滤与排序
+          // 过滤与排序
           const { filters, sort } = state.scaffold;
           if (!!filters && filters.length > 0) {
             products = products.filter((p) =>
@@ -70,11 +70,14 @@ export const scaffold = createModel()({
           }
 
           dispatch({ type: 'scaffold/updateProducts', payload: products });
-        } catch (e) {
-          console.error(e);
-          console.log('Could not fetch products. Try again later.');
-        } finally {
           dispatch({ type: 'scaffold/updateLoadingState', payload: false });
+        } catch (e) {
+          dispatch({ type: 'scaffold/updateLoadingState', payload: false });
+          console.error(e);
+          // 如果请求错误 进行提示是否继续获取
+          if (window.confirm('数据获取异常！是否重试？')) {
+            this.fetchProducts();
+          }
         }
       },
     };

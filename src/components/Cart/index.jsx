@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faShoppingCart,
   faArrowRight,
+  faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '@mui/material';
+import { useSelector, useDispatch } from 'react-redux';
+import { clearCart } from '@/services/actions';
 import CartItem from './CartItem';
 import Empty from './Empty';
 import './style.scss';
@@ -22,57 +25,67 @@ import './style.scss';
 // }
 
 export default function Cart() {
-  const [isOpen, setOpen] = useState(false);
+  const state = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
   const classes = ['cart'];
-  if (isOpen) {
+  if (state.isOpen) {
     classes.push('open');
   }
   return (
     <div className={classes.join(' ')}>
-      {isOpen ? (
-        <div className="cart__close-btn" onClick={() => setOpen(false)}>
+      {state.isOpen ? (
+        <div
+          className="cart__close-btn"
+          onClick={() => dispatch.cart.updateOpenState(false)}
+        >
           <FontAwesomeIcon icon={faArrowRight} size="lg" />
         </div>
       ) : (
-        <div className="cart__open-btn" onClick={() => setOpen(true)}>
+        <div
+          className="cart__open-btn"
+          onClick={() => dispatch.cart.updateOpenState(true)}
+        >
           <FontAwesomeIcon icon={faShoppingCart} size="2x" />
-          <span className="quantity">11</span>
+          <span className="quantity">{state.total}</span>
+        </div>
+      )}
+      {state.products.length > 0 && (
+        <div className="cart__clear-btn" onClick={clearCart}>
+          <FontAwesomeIcon icon={faTrash} size="1x" />
         </div>
       )}
       <div className="cart__content">
         <div className="cart__content__header">
           <div>
             <span>购物车</span>
-            <span className="quantity">11</span>
+            <span className="quantity">{state.total}</span>
           </div>
         </div>
         <div className="cart__content__container">
           <div>
-            <Empty />
-            {/* <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem /> */}
+            {state.products.length <= 0 && <Empty />}
+            {state.products.map((p) => (
+              <CartItem key={p.id} product={p} />
+            ))}
           </div>
         </div>
         <div className="cart__content__footer">
-          <div className="cart__content__">
+          <div>
             <span>合计</span>
             <div>
               <p>
-                <b>$ 219.15</b>
+                <b>$ {state.price.toFixed(2)}</b>
               </p>
-              {/* <small>
-                <span>OR UP TO 12 x $ 18.26</span>
-              </small> */}
             </div>
           </div>
-          <Button color="error" fullWidth size="large" variant="contained">
+          <Button
+            color="error"
+            fullWidth
+            size="large"
+            variant="contained"
+            disabled={state.price <= 0}
+          >
             结&nbsp;&nbsp;算
           </Button>
         </div>

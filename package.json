@@ -13,6 +13,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "antd": "^4.18.6",
     "axios": "^0.25.0",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
@@ -71,6 +72,8 @@
     "sass": "^1.49.0"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": ["eslint --cache --fix"]
+    "src/**/*.{js,jsx}": [
+      "eslint --cache --fix"
+    ]
   }
 }
