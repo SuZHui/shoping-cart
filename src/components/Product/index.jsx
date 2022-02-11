@@ -1,7 +1,5 @@
 import React from 'react';
-import { CardMedia, CardActions, Button } from '@mui/material';
-import { Card } from 'antd';
-import useShadow from './useShadow';
+import { Card, Button } from 'antd';
 import { formatPrice } from '@/utils';
 import './style.scss';
 
@@ -31,17 +29,9 @@ export default function Product({ onAdd, data }) {
             <span>{`.${price2}`}</span>
           </div>
         </div>
-        <CardActions>
-          <Button
-            onClick={() => onAdd(data)}
-            fullWidth
-            color="error"
-            variant="outlined"
-            sx={{ color: '#fb0101', borderColor: '#fb0101' }}
-          >
-            加入购物车
-          </Button>
-        </CardActions>
+        <Button onClick={() => onAdd(data)} danger type="primary" block>
+          加入购物车
+        </Button>
       </Card>
     </div>
   );

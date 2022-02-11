@@ -14,10 +14,10 @@ code {
 }
 
 main {
-  display: flex;
+  // display: flex;
   padding: 20px 2%;
   max-width: 1200px;
-  margin: 50px auto 0;
+  margin: 0 auto;
   @media (max-width: 460px) {
     flex-wrap: wrap;
     padding: 2%;

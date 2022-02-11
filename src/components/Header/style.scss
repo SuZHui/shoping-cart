@@ -1,0 +1,13 @@
+.header {
+  background-color: rgba(#1b1a20, 1);
+  h1 {
+    padding: 6px 20px;
+    color: #FFF;
+  }
+  &-affix {
+    padding: 10px 20px;
+    background-color: rgba(#1b1a20, 0.8);
+    backdrop-filter: blur(16px);
+    color: #FFF;
+  }
+}

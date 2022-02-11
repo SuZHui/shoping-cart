@@ -17,7 +17,7 @@ const compare = {
 export const scaffold = createModel()({
   state: {
     // 排序方式
-    sort: undefined,
+    sort: null,
     products: [],
     // 筛选条件(匹配尺码)
     filters: [],

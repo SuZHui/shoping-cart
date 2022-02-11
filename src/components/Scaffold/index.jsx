@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Spin from '@/components/Spin';
-import ScaffoldHeader from '@/components/Scaffold/Header';
+// import ScaffoldHeader from '@/components/Scaffold/Header';
 import Product from '@/components/Product';
 import { fetchProducts, addProduct } from '@/services/actions';
 import { useSelector } from 'react-redux';
@@ -19,7 +19,7 @@ export default function Scaffold() {
     <>
       {isLoading && <Spin fullscreen />}
       <div className="scaffold">
-        <ScaffoldHeader />
+        {/* <ScaffoldHeader /> */}
         {/* 产品列表 */}
         {products.map((p) => (
           <Product key={p.id} data={p} onAdd={addProduct} />

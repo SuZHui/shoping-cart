@@ -20,8 +20,7 @@ export default function Filter() {
 
   return (
     <div className="filter">
-      <h4>尺码</h4>
-      <div></div>
+      {/* <h4>尺码</h4> */}
       {availableSizes.map((l) => (
         <CheckBox key={l} label={l} onChange={toggleCheckbox} />
       ))}

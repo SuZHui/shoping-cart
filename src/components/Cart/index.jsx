@@ -5,7 +5,7 @@ import {
   faArrowRight,
   faTrash,
 } from '@fortawesome/free-solid-svg-icons';
-import { Button } from '@mui/material';
+import { Button } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearCart } from '@/services/actions';
 import CartItem from './CartItem';
@@ -80,10 +80,10 @@ export default function Cart() {
             </div>
           </div>
           <Button
-            color="error"
-            fullWidth
+            type="primary"
+            danger
+            block
             size="large"
-            variant="contained"
             disabled={state.price <= 0}
           >
             结&nbsp;&nbsp;算
