@@ -1,4 +1,4 @@
-import { ButtonGroup, Button } from '@mui/material';
+import { Button } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { removeProduct, updateProduct } from '@/services/actions';
@@ -39,18 +39,21 @@ export default function CartItem({ product }) {
           {`${product.currencyFormat} ${formatPrice(product.price)}`}{' '}
         </p>
         <div>
-          <ButtonGroup variant="contained" size="small" color="error">
-            <Button onClick={handleDecrease} disabled={product.qty <= 1}>
-              <span>
-                <FontAwesomeIcon size="xs" icon={faMinus} />
-              </span>
-            </Button>
-            <Button onClick={handleIncrease}>
-              <span>
-                <FontAwesomeIcon size="xs" icon={faPlus} />
-              </span>
-            </Button>
-          </ButtonGroup>
+          <Button
+            danger
+            size="small"
+            type="primary"
+            icon={<FontAwesomeIcon size="xs" icon={faMinus} />}
+            disabled={product.qty <= 1}
+            onClick={handleDecrease}
+          ></Button>
+          <Button
+            danger
+            size="small"
+            type="primary"
+            icon={<FontAwesomeIcon size="xs" icon={faPlus} />}
+            onClick={handleIncrease}
+          ></Button>
         </div>
       </div>
     </div>

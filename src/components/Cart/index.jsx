@@ -19,7 +19,7 @@ export default function Cart() {
   const handleCheckout = () => {
     Modal.confirm({
       title: '结算',
-      content: `总计\$${state.price.toFixed(2)}, 确认支付？`,
+      content: `总计$${state.price.toFixed(2)}, 确认支付？`,
       okText: '继续支付',
       cancelText: '取消支付',
       onOk: () => {
