@@ -5,7 +5,7 @@ import {
   faArrowRight,
   faTrash,
 } from '@fortawesome/free-solid-svg-icons';
-import { Button } from 'antd';
+import { Button, Modal, message } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearCart } from '@/services/actions';
 import CartItem from './CartItem';
@@ -15,6 +15,20 @@ import './style.scss';
 export default function Cart() {
   const state = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
+  const handleCheckout = () => {
+    Modal.confirm({
+      title: '结算',
+      content: `总计\$${state.price.toFixed(2)}, 确认支付？`,
+      okText: '继续支付',
+      cancelText: '取消支付',
+      onOk: () => {
+        dispatch.cart.updateOpenState(false);
+        dispatch.cart.clear();
+        message.success('支付成功');
+      },
+    });
+  };
 
   const classes = ['cart'];
   if (state.isOpen) {
@@ -77,6 +91,7 @@ export default function Cart() {
             block
             size="large"
             disabled={state.price <= 0}
+            onClick={handleCheckout}
           >
             结&nbsp;&nbsp;算
           </Button>

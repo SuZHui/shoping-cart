@@ -30,8 +30,6 @@ $theme-color: #fb0101;
 
   $open-btn-size: 40px;
   &__open-btn {
-    // background-color: rgba($bg-color, 0.9);
-    // backdrop-filter: blur(16px);
     width: $open-btn-size;
     height: $open-btn-size;
     left: -$open-btn-size - 8;
