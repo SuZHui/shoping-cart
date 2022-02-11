@@ -28,13 +28,14 @@ $theme-color: #fb0101;
     user-select: none;
   }
 
-  $open-btn-size: 60px;
+  $open-btn-size: 40px;
   &__open-btn {
-    background-color: rgba($bg-color, 0.9);
-    backdrop-filter: blur(16px);
+    // background-color: rgba($bg-color, 0.9);
+    // backdrop-filter: blur(16px);
     width: $open-btn-size;
     height: $open-btn-size;
-    left: -$open-btn-size;
+    left: -$open-btn-size - 8;
+    top: 6px;
     line-height: $open-btn-size;
     display: flex;
     justify-content: center;
@@ -42,8 +43,8 @@ $theme-color: #fb0101;
     position: relative;
     & .quantity {
       position: absolute;
-      bottom: 8px;
-      right: 8px;
+      bottom: 2px;
+      right: 0px;
     }
   }
   &__close-btn {

@@ -1,4 +1,5 @@
 import { createModel } from '@rematch/core';
+import { Modal } from 'antd';
 import API from '@/api';
 
 const compare = {
@@ -75,9 +76,18 @@ export const scaffold = createModel()({
           dispatch({ type: 'scaffold/updateLoadingState', payload: false });
           console.error(e);
           // 如果请求错误 进行提示是否继续获取
-          if (window.confirm('数据获取异常！是否重试？')) {
-            this.fetchProducts();
-          }
+          Modal.confirm({
+            title: '错误',
+            content: '数据获取异常！是否重试？',
+            okText: '重试',
+            cancelText: '取消',
+            onOk: () => {
+              this.fetchProducts();
+            },
+          });
+          // if (window.confirm('数据获取异常！是否重试？')) {
+          //   this.fetchProducts();
+          // }
         }
       },
     };

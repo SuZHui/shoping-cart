@@ -12,18 +12,6 @@ import CartItem from './CartItem';
 import Empty from './Empty';
 import './style.scss';
 
-// const lockBody = () => {
-//   if (!document.body.classList.contains('overflow-hidden')) {
-//     document.body.classList.add('overflow-hidden')
-//   }
-// }
-
-// const unlockBody = () => {
-//   if (document.body.classList.contains('overflow-hidden')) {
-//     document.body.classList.remove('overflow-hidden')
-//   }
-// }
-
 export default function Cart() {
   const state = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -46,7 +34,11 @@ export default function Cart() {
           className="cart__open-btn"
           onClick={() => dispatch.cart.updateOpenState(true)}
         >
-          <FontAwesomeIcon icon={faShoppingCart} size="2x" />
+          <FontAwesomeIcon
+            icon={faShoppingCart}
+            style={{ fontSize: 24 }}
+            size="2x"
+          />
           <span className="quantity">{state.total}</span>
         </div>
       )}

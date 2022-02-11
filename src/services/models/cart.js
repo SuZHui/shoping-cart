@@ -1,5 +1,17 @@
 import { createModel } from '@rematch/core';
 
+// const lockBody = () => {
+//   if (!document.body.classList.contains('overflow-hidden')) {
+//     document.body.classList.add('overflow-hidden');
+//   }
+// };
+
+// const unlockBody = () => {
+//   if (document.body.classList.contains('overflow-hidden')) {
+//     document.body.classList.remove('overflow-hidden');
+//   }
+// };
+
 const updatePriceAndTotal = (products = []) => {
   return products.reduce(
     (t, c) => {
@@ -21,6 +33,11 @@ export const cart = createModel()({
   },
   reducers: {
     updateOpenState: (state, payload) => {
+      // if (payload) {
+      //   lockBody();
+      // } else {
+      //   unlockBody();
+      // }
       return {
         ...state,
         isOpen: payload,
