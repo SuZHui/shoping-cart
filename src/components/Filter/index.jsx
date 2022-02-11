@@ -1,7 +1,6 @@
 import CheckBox from './Checkbox';
 import { updateFilters } from '@/services/actions';
-
-import './style.scss';
+import styles from './style.module.scss';
 
 const availableSizes = ['XS', 'S', 'M', 'ML', 'L', 'XL', 'XXL'];
 
@@ -19,7 +18,7 @@ export default function Filter() {
   };
 
   return (
-    <div className="filter">
+    <div className={styles['filter']}>
       {/* <h4>尺码</h4> */}
       {availableSizes.map((l) => (
         <CheckBox key={l} label={l} onChange={toggleCheckbox} />

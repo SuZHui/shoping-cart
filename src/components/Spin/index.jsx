@@ -1,15 +1,15 @@
 import React from 'react';
-import './style.scss';
+import styles from './style.module.scss';
 
 export default function Spin({ fullscreen = false }) {
-  const className = ['spin', fullscreen && 'fullscreen']
+  const className = [styles.spin, fullscreen && styles.fullscreen]
     .filter(Boolean)
     .join(' ');
   return (
     <div className={className}>
-      <div className="icon">
+      <div className={styles['icon']}>
         <svg
-          className="spin-inner"
+          className={styles['spin-inner']}
           width="44"
           height="50"
           viewBox="0 0 135 140"

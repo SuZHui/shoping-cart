@@ -4,7 +4,7 @@ import Spin from '@/components/Spin';
 import Product from '@/components/Product';
 import { fetchProducts, addProduct } from '@/services/actions';
 import { useSelector } from 'react-redux';
-import './style.scss';
+import styles from './style.module.scss';
 
 export default function Scaffold() {
   const { products, filters, sort, isLoading } = useSelector(
@@ -18,7 +18,7 @@ export default function Scaffold() {
   return (
     <>
       {isLoading && <Spin fullscreen />}
-      <div className="scaffold">
+      <div className={styles['scaffold']}>
         {/* <ScaffoldHeader /> */}
         {/* 产品列表 */}
         {products.map((p) => (

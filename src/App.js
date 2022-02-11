@@ -7,7 +7,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <Header fixed={<div>123</div>} />
+      <Header />
       <main>
         {/* <Filter /> */}
         <Scaffold />

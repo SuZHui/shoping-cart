@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { clearCart } from '@/services/actions';
 import CartItem from './CartItem';
 import Empty from './Empty';
-import './style.scss';
+import styles from './style.module.scss';
 
 export default function Cart() {
   const state = useSelector((state) => state.cart);
@@ -30,22 +30,22 @@ export default function Cart() {
     });
   };
 
-  const classes = ['cart'];
+  const classes = [styles.cart];
   if (state.isOpen) {
-    classes.push('open');
+    classes.push(styles.open);
   }
   return (
     <div className={classes.join(' ')}>
       {state.isOpen ? (
         <div
-          className="cart__close-btn"
+          className={styles['cart__close-btn']}
           onClick={() => dispatch.cart.updateOpenState(false)}
         >
           <FontAwesomeIcon icon={faArrowRight} size="lg" />
         </div>
       ) : (
         <div
-          className="cart__open-btn"
+          className={styles['cart__open-btn']}
           onClick={() => dispatch.cart.updateOpenState(true)}
         >
           <FontAwesomeIcon
@@ -53,22 +53,22 @@ export default function Cart() {
             style={{ fontSize: 24 }}
             size="2x"
           />
-          <span className="quantity">{state.total}</span>
+          <span className={styles['quantity']}>{state.total}</span>
         </div>
       )}
       {state.products.length > 0 && (
-        <div className="cart__clear-btn" onClick={clearCart}>
+        <div className={styles['cart__clear-btn']} onClick={clearCart}>
           <FontAwesomeIcon icon={faTrash} size="1x" />
         </div>
       )}
-      <div className="cart__content">
-        <div className="cart__content__header">
+      <div className={styles['cart__content']}>
+        <div className={styles['cart__content__header']}>
           <div>
             <span>购物车</span>
-            <span className="quantity">{state.total}</span>
+            <span className={styles['quantity']}>{state.total}</span>
           </div>
         </div>
-        <div className="cart__content__container">
+        <div className={styles['cart__content__container']}>
           <div>
             {state.products.length <= 0 && <Empty />}
             {state.products.map((p) => (
@@ -76,7 +76,7 @@ export default function Cart() {
             ))}
           </div>
         </div>
-        <div className="cart__content__footer">
+        <div className={styles['cart__content__footer']}>
           <div>
             <span>合计</span>
             <div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Select } from 'antd';
 import { useSelector } from 'react-redux';
 import { updateSort } from '@/services/actions';
-import './style.scss';
+import styles from './style.module.scss';
 
 const { Option } = Select;
 
@@ -21,7 +21,7 @@ export default function Header() {
   };
 
   return (
-    <div className="scaffold-header">
+    <div className={styles['scaffold-header']}>
       <div>
         <small>共{state.products.length}件商品</small>
       </div>

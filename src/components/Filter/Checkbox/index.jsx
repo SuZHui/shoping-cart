@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './style.scss';
+import styles from './style.module.scss';
 
 export default function CheckBox({ onChange, label }) {
   const [isChecked, setChecked] = useState(false);
@@ -8,7 +8,7 @@ export default function CheckBox({ onChange, label }) {
     onChange(label);
   };
   return (
-    <div className="checkbox">
+    <div className={styles['checkbox']}>
       <label>
         <input
           checked={isChecked}

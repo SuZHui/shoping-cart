@@ -12,7 +12,7 @@
 - 示例项⽬使⽤了单元测试、集成测试和E2E测试，尝试在⾃⼰的代码中实现
 - ~~加入eslint提示~~
 - ~~加入`husky`和`lint-staged`~~
-- 检查项目内的组件style,全部替换为css module
+- ~~检查项目内的组件style,全部替换为css module~~
 - ~~使用`gh-pages` 部署分支与开发分支分离~~
 - ~~调整`Filiter`组件样式~~
 
