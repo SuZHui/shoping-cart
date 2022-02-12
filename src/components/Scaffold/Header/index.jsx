@@ -16,7 +16,6 @@ export default function Header() {
   const state = useSelector((state) => state.scaffold);
 
   const handleChange = (event) => {
-    console.log(event);
     updateSort(event);
   };
 

@@ -4,7 +4,6 @@ import { faPlus, faMinus, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { removeProduct, updateProduct } from '@/services/actions';
 import { formatPrice } from '@/utils';
 import styles from './style.module.scss';
-console.log(styles);
 
 export default function CartItem({ product }) {
   const handleIncrease = () => {

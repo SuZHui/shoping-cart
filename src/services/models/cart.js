@@ -44,7 +44,6 @@ export const cart = createModel()({
       };
     },
     add: (state, payload) => {
-      console.log(payload);
       const { products } = state;
 
       let alreadyInCart = false;
