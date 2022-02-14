@@ -1,4 +1,4 @@
-# Shoping Cart
+# Shopping Cart
 
 > The project is referenced at [react-shopping-cart](https://github.com/jeffersonRibeiro/react-shopping-cart)
 
@@ -6,15 +6,15 @@
 - ~~完成商品列表UI~~
 - ~~完成侧边栏购物车UI~~
 - ~~通⽤组件的视觉效果在使⽤了UI组件基础上调整，不允许调成跟作业完全⼀样的视觉效果(防⽌直接抄)~~
-- ~~使⽤现成UI框架(⽐如material, ant design, rebassjs等等)，解决按钮、下拉、卡⽚组件等通⽤组件的呈现和交互问题~~
+- ~~使⽤现成UI框架(⽐如material, ant design, rebass等等)，解决按钮、下拉、卡⽚组件等通⽤组件的呈现和交互问题~~
 - ~~购物⻋数据在关闭浏览器后重新打开必须仍然存在(提示：localStorage)~~
-- ~~使⽤rematchjs做状态管理~~
+- ~~使⽤rematch做状态管理~~
 - ~~示例项⽬使⽤了单元测试、集成测试和E2E测试，尝试在⾃⼰的代码中实现~~
 - ~~加入eslint提示~~
 - ~~加入`husky`和`lint-staged`~~
 - ~~检查项目内的组件style,全部替换为css module~~
 - ~~使用`gh-pages` 部署分支与开发分支分离~~
-- ~~调整`Filiter`组件样式~~
+- ~~调整`Filter`组件样式~~
 
 ## 功能层面：
 1. ~~添加购物车~~
