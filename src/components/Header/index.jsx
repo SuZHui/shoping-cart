@@ -1,6 +1,6 @@
 import { Affix } from 'antd';
 import Filter from '@/components/Filter';
-import ScaffodHeader from '@/components/Scaffold/Header';
+import ScaffoldHeader from '@/components/Scaffold/Header';
 import styles from './style.module.scss';
 
 export default function Header() {
@@ -14,7 +14,7 @@ export default function Header() {
       <Affix>
         <div className={styles['header-affix']}>
           <Filter />
-          <ScaffodHeader />
+          <ScaffoldHeader />
         </div>
       </Affix>
     </header>
