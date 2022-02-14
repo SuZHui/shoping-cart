@@ -72,5 +72,10 @@
     "src/**/*.{js,jsx}": [
       "eslint --cache --fix"
     ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
   }
 }
