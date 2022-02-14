@@ -1,10 +1,17 @@
 import { init } from '@rematch/core';
 import { models } from './models';
 
+let initialState;
+try {
+  initialState = JSON.parse(localStorage.getItem('persist')) || {};
+} catch {
+  initialState = {};
+}
+
 const store = init({
   models,
   redux: {
-    initialState: JSON.parse(window.localStorage.getItem('persist')) || {},
+    initialState,
   },
 });
 

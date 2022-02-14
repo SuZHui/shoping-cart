@@ -15,7 +15,7 @@ const mockProduct = {
   isFreeShipping: true,
 };
 
-test('`Product 正常渲染`', () => {
+test('`Product` 正常渲染', () => {
   const { unmount } = render(<Product data={mockProduct} />);
   unmount();
 });

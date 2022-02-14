@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Button } from 'antd';
+import PropTypes from 'prop-types';
 import { formatPrice } from '@/utils';
 import styles from './style.module.scss';
 
@@ -39,4 +40,9 @@ export default function Product({ onAdd, data }) {
 
 Product.defaultProps = {
   onAdd() {},
+};
+
+Product.propTypes = {
+  data: PropTypes.object.isRequired,
+  onAdd: PropTypes.func,
 };
